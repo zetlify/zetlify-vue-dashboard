@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dp-font-family: 'Quicksand', sans-serif !important;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+}
+
+/* Overlay Scrollbar Plugin */
+.os-scrollbar .os-scrollbar-handle {
+  background-color: #d1d5db;
+}
+.dark .os-scrollbar .os-scrollbar-handle {
+  background-color: #374151;
+}
+.os-scrollbar .os-scrollbar-handle:active,
+.os-scrollbar .os-scrollbar-handle:hover {
+  background-color: #d1d5db;
+}
+.dark .os-scrollbar .os-scrollbar-handle:active,
+.dark .os-scrollbar .os-scrollbar-handle:hover {
+  background-color: #374151;
+}
+.os-scrollbar-horizontal .os-scrollbar-handle {
+  bottom: -2px;
+}
+.os-scrollbar-vertical .os-scrollbar-handle {
+  right: -2px;
+}
+
+/* NP Progress Bar */
+/* #nprogress {
+  @apply pointer-events-none;
+}
+#nprogress .bar {
+  @apply bg-primary fixed w-full h-[2px] z-[1050] top-0 left-0;
+} */
+
+/* Icon Styles */
+.icon {
+  @apply w-6 h-6 flex-shrink-0 text-gray-500 dark:text-gray-400;
+}
+.icon-2 {
+  @apply w-6 h-6 flex-shrink-0 text-white dark:text-gray-400;
+}
+.sidebar-icon {
+  @apply w-6 h-6 flex-shrink-0;
+}
+.btn-icon {
+  @apply p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900;
+}
+.btn-icon-2 {
+  @apply p-2 rounded-md bg-gray-100 dark:bg-gray-900;
+}
+.btn-circle {
+  @apply w-8 h-8 text-gray-500 font-semibold p-1 rounded-full bg-gray-200 hover:ring-2 ring-gray-300 dark:text-gray-400 dark:ring-gray-700 dark:bg-gray-900;
+}
+.default-icon {
+  @apply w-10 h-10 p-1 flex-shrink-0 text-gray-500 rounded-md bg-gray-200 dark:text-gray-400 dark:bg-gray-900;
+}
+
+/* From Styles */
+@layer base {
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+}
+
+.input-label {
+  @apply inline-block text-base font-bold text-gray-600 dark:text-gray-300 mb-1;
+}
+.input {
+  @apply appearance-none w-full text-base font-semibold text-gray-500 focus:outline-none border-0 ring-1 ring-gray-300 focus:ring-2 focus:ring-primary shadow rounded-lg px-3 py-2 placeholder-gray-500/60 dark:text-gray-400 dark:ring-gray-700 dark:focus:ring-primary dark:bg-gray-900;
+}
+.input-checkbox {
+  @apply w-5 h-5 rounded text-primary focus:ring-1 focus:ring-primary border-gray-300 checked:border-0 dark:border-gray-700 dark:bg-gray-900 dark:focus:ring-offset-gray-900 dark:checked:bg-primary transition duration-150 ease-in-out;
+}
+.input-error {
+  @apply inline-block text-sm text-red-500 dark:text-red-400 font-medium mt-1;
+}
+.db-error {
+  @apply bg-red-400 rounded-lg font-medium text-white text-center p-2 mb-3;
+}
+
+/* Dropdown Item */
+.dropdown-item {
+  @apply flex items-center gap-2 w-full px-3 py-2 leading-5 text-base font-medium text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900 transition duration-150 ease-in-out;
+}
+
+/* Table */
+.table-tr {
+  @apply divide-x divide-gray-200 border-b dark:divide-gray-700 dark:border-gray-700;
+}
+.select-label {
+  @apply flex items-center;
+}
+.th-cell {
+  @apply p-3 first:w-[45px] first:rounded-l-lg last:rounded-r-lg whitespace-nowrap;
+}
+.td-cell {
+  @apply p-3 font-medium whitespace-nowrap;
+}
+.td-cell-action {
+  @apply flex gap-3;
+}
+
+.pill {
+  @apply text-base font-semibold text-white py-1 px-3 rounded-full;
+}
+.pill-danger {
+  @apply bg-red-400;
+}
+.pill-warning {
+  @apply bg-yellow-500;
+}
+.pill-info {
+  @apply bg-primary;
+}
+.pill-success {
+  @apply bg-green-500;
+}
+
+.status-icon {
+  @apply w-7 h-7 flex-shrink-0;
+}
+.status-error {
+  @apply text-red-400;
+}
+.status-success {
+  @apply text-green-500;
+}
+
+/* Date Picker */
+.dp_main > div {
+  @apply !w-[175px];
+}
+.dp__input {
+  @apply !w-[280px] !text-base !text-gray-500 font-semibold focus:outline-none !border-0 ring-1 ring-gray-300 focus:ring-2 focus:!ring-primary shadow !rounded-lg !pl-[45px] !pr-3 !py-2 dark:ring-gray-700 dark:bg-gray-900;
+}
+.dp__input_icons {
+  @apply !w-6 !h-6 !flex-shrink-0 !fill-gray-500/50 !px-[6px_10px];
+}
+.dark .dp__input_icons {
+  @apply fill-gray-500/60;
+}
+.dp__action_buttons {
+  @apply gap-1;
+}
+.dp__action_button {
+  @apply !p-3 !text-base font-semibold !rounded-lg;
+}
+.dp--preset-dates {
+  @apply !p-[10px] font-medium;
+}
+.dp--preset-range {
+  @apply !px-[10px];
+}
+.dp--preset-range:nth-child(2) {
+  display: none;
+}
+.dp__month_year_row,
+.dp__calendar {
+  @apply font-medium;
+}
+.dp__selection_preview {
+  @apply font-semibold !text-sm;
+}
+.dp__action_row {
+  --dp-action-row-padding: 10px 15px;
+}
